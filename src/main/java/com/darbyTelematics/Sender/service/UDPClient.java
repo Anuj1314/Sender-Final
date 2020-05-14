@@ -8,7 +8,7 @@ import java.io.*;
 import java.net.*;
 
 public class UDPClient {
-    public void run(Messages receivedData) throws IOException, ClassNotFoundException {
+    public String run(Messages receivedData) throws IOException, ClassNotFoundException {
 //      serialization of an object or received data's object. Because datagram packet takes only byte array input
         byte[] buf;
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
@@ -30,5 +30,6 @@ public class UDPClient {
         DatagramPacket packet = new DatagramPacket(buf, buf.length, address, 8787);
         socket.send(packet);
         System.out.println(buf);
+        return "Message has been sent to Listener using Datagram Packet";
     }
 }

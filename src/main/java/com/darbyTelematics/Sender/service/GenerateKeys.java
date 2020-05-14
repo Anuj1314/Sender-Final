@@ -15,12 +15,7 @@ public class GenerateKeys {
         this.keyPair = this.keyPairGenerator.generateKeyPair();
         this.privateKey = keyPair.getPrivate();
         this.publicKey = keyPair.getPublic();
-
-        System.out.println("pr\n"+privateKey);
-        System.out.println("pu\n"+publicKey);
-
     }
-
 
     public PrivateKey getPrivateKey() {
         return privateKey;

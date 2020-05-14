@@ -1,4 +1,4 @@
-package com.darbyTelematics.Sender.repo;
+package com.darbyTelematics.Sender.model;
 
 public class PublicKeys {
     int id;
