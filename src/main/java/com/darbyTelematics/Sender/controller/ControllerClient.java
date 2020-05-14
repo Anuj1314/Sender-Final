@@ -15,22 +15,22 @@ import java.util.List;
 
 @RestController
 public class ControllerClient {
-    @Autowired SharePublicKeyService sharePublicKeyService;
-    @Autowired SendMessageService sendMessageService;
-    @Autowired GetMessageService getMessageService;
+
+    @Autowired
+    SenderServices senderServices;
 
     @GetMapping("/connect")
     public String storePublicKeyToDb(){
-        return sharePublicKeyService.SaveToDataBase();
+        return senderServices.SaveToDataBase();
     }
 
     @PostMapping("/sendMessage")
     public String sendMessage(@RequestBody Messages myMessage) throws IllegalBlockSizeException, BadPaddingException, InvalidKeyException, IOException, NoSuchAlgorithmException, InvalidKeySpecException, ClassNotFoundException {
-        return sendMessageService.sendToListener(myMessage);
+        return senderServices.sendToListener(myMessage);
     }
 
     @GetMapping(value = "/getMessages")
     public List<String> getMessages() throws IllegalBlockSizeException, BadPaddingException, InvalidKeyException, UnsupportedEncodingException {
-        return getMessageService.getAllMessages();
+        return senderServices.getAllMessages();
     }
 }
