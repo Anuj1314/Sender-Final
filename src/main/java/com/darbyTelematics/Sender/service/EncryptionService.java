@@ -1,5 +1,7 @@
 package com.darbyTelematics.Sender.service;
 
+import org.springframework.stereotype.Service;
+
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
@@ -11,6 +13,7 @@ import java.io.UnsupportedEncodingException;
 import java.security.*;
 import java.util.Base64;
 
+@Service
 public class EncryptionService {
     private Cipher cipher;
     public EncryptionService() throws NoSuchPaddingException, NoSuchAlgorithmException {

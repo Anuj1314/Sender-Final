@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 
 import java.security.*;
 
-@Service
+
 public class GenerateKeys {
     private KeyPairGenerator keyPairGenerator;
     private KeyPair keyPair;

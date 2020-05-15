@@ -3,10 +3,12 @@ package com.darbyTelematics.Sender.service;
 
 
 import com.pojo.Messages;
+import org.springframework.stereotype.Service;
 
 import java.io.*;
 import java.net.*;
 
+@Service
 public class UDPClient {
     public String run(Messages receivedData) throws IOException, ClassNotFoundException {
 //      serialization of an object or received data's object. Because datagram packet takes only byte array input

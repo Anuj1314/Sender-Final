@@ -26,7 +26,7 @@ import java.util.ListIterator;
 
 @Service
 public class SenderServices {
-    @Value("${whoAmI}")
+    @Value("${instanceId}")
     String mySelf;
 
     @Autowired
